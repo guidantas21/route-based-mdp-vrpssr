@@ -42,6 +42,11 @@ public:
         return _arrival_time;
     }
 
+    inline size_t get_route_size() const
+    {
+        return _route.size();
+    }
+
     // methods
 
     inline void init()

@@ -46,6 +46,8 @@ void VRPSSR_env::step(std::vector<size_t> &route)
     std::cout << "\n(DEBUG) update post-decision state" << std::endl;
     #endif
 
+    size_t current_route_reward = _vehicle.get_route_size();
+
     _vehicle.set_route(route);
 
     if (route.empty() == false)
@@ -55,7 +57,7 @@ void VRPSSR_env::step(std::vector<size_t> &route)
         _time = _vehicle.get_arrival_time();
         _location_status[_vehicle.get_location()] = Status::SERVICED;
         std::cout << "(DEBUG) serviced location: " << _vehicle.get_location() << std::endl;
-        _reward += route.size();
+        _reward += 1 + route.size() - current_route_reward;
 
         #ifdef DEBUG
         std::cout << "(DEBUG) route: ";
