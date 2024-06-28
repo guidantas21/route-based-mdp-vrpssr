@@ -8,11 +8,14 @@
 class RequestDispatcher
 {
 private:
-    ConfigEnv &_config;
+    ConfigEnv *_config;
     std::priority_queue<Request, std::vector<Request>, std::greater<Request>> _requests;
 
 public:
-    inline RequestDispatcher(ConfigEnv &config) : _config(config) {}
+    inline RequestDispatcher(ConfigEnv *config) 
+    {
+        _config = config;
+    }
 
     std::vector<Request> get_requests_at_time(const size_t time_point);
 

@@ -11,8 +11,8 @@
 class Request
 {
 private:
-    size_t _location = 0;
-    size_t _request_time_point = 0;
+    size_t _location;
+    size_t _request_time_point;
     
 public:
     inline Request(
