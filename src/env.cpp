@@ -56,10 +56,10 @@ void VRPSSR_env::step(std::vector<size_t> &route)
 
         _time = _vehicle.get_arrival_time();
         _location_status[_vehicle.get_location()] = Status::SERVICED;
-        std::cout << "(DEBUG) serviced location: " << _vehicle.get_location() << std::endl;
         _reward += 1 + route.size() - current_route_reward;
 
         #ifdef DEBUG
+        std::cout << "(DEBUG) serviced location: " << _vehicle.get_location() << std::endl;
         std::cout << "(DEBUG) route: ";
         for (size_t i = 0; i < route.size(); ++i)
         {

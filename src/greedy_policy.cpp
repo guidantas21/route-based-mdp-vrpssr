@@ -17,11 +17,11 @@ std::vector<size_t> greedy_policy(
         {
             if (route.empty())
             {
-                config.get_travel_time(location, i);
+                travel_time += config.get_travel_time(location, i);
             }
             else
             {
-                config.get_travel_time(route.back(), i);
+                travel_time += config.get_travel_time(route.back(), i);
             }
 
             if ((route_time + travel_time 

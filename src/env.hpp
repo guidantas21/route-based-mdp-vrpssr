@@ -28,7 +28,7 @@ private:
 
     ///// system state information
 
-    std::vector<Status> _location_status; 
+    std::vector<Status> _location_status;
 
     size_t _decision_point;
     size_t _time;
